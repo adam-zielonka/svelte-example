@@ -11,27 +11,27 @@ export const canAddMoreCounters = derived(
   $counters => $counters.length < 4
 );
 
-export const updateCounter = (index: number, delta: number) => {
+export function updateCounter(index: number, delta: number) {
   counters.update(counters => {
     counters[index] += delta;
     return counters;
   });
-};
+}
 
-export const setCounter = (index: number, value: number) => {
+export function setCounter(index: number, value: number) {
   counters.update(counters => {
     counters[index] = value;
     return counters;
   });
-};
+}
 
-export const addCounter = () => {
+export function addCounter() {
   counters.update(counters => [...counters, 0]);
-};
+}
 
-export const deleteCounter = (index: number) => {
+export function deleteCounter(index: number) {
   counters.update(counters => {
     counters.splice(index, 1);
     return counters;
   });
-};
+}
