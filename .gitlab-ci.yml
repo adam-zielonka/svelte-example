@@ -13,7 +13,7 @@ build:
   artifacts:
     expire_in: 1 week
     paths:
-      - build
+      - dist
   cache:
     paths:
       - node_modules
@@ -28,7 +28,7 @@ pages:
     - job: build
       artifacts: true
   script:
-    - mv build public
+    - mv dist public
   artifacts:
     expire_in: 1 week
     paths:
