@@ -1,0 +1,37 @@
+image: node:17.1.0-alpine
+
+stages:
+  - build
+  - deploy
+
+build:
+  stage: build
+  script:
+    - npm install -g pnpm
+    - pnpm install
+    - pnpm build
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - build
+  cache:
+    paths:
+      - node_modules
+
+pages:
+  image: alpine
+  variables:
+    GIT_STRATEGY: none
+    GIT_CHECKOUT: "false"
+  stage: deploy
+  needs:
+    - job: build
+      artifacts: true
+  script:
+    - mv build public
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - public
+  only:
+    - main
