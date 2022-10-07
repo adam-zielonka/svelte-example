@@ -1,6 +1,6 @@
 <footer>
-  Source code: <a href="https://gitlab.com/adam-zielonka-pro/svelte-example">
-    https://gitlab.com/adam-zielonka-pro/svelte-example
+  Source code: <a href="https://github.com/adam-zielonka/svelte-example">
+    https://github.com/adam-zielonka/svelte-example
   </a>
 </footer>
 
