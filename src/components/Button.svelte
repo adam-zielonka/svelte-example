@@ -2,7 +2,7 @@
   export let hidden: boolean = false;
 </script>
 
-<button class={hidden && "hidden"} on:click><slot /></button>
+<button class:hidden={hidden} on:click><slot /></button>
 
 <style>
   .hidden {
